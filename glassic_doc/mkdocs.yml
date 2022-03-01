@@ -1,0 +1,14 @@
+site_name: 'glassic docs'
+theme: 'windmill'
+site_author: 'Nicki Nguyen'
+
+repo_url: https://github.com/csc309-fall-2021/js-library-nguy1916
+
+nav:
+  - Website:
+    - Homepage: https://hidden-brook-51530.herokuapp.com/pages/index.html
+    - Demo link: https://hidden-brook-51530.herokuapp.com/pages/demo/demo.html
+  - Document: index.md
+  - Get Started: getStarted.md
+  - API: apis.md
+ 

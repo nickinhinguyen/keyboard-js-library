@@ -1,0 +1,278 @@
+
+body {
+     width: 100%;
+    background-color: #282c34;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+h1{
+  color : white;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 300;
+}
+.glassic{
+  color:#fde473;
+  text-align: left;
+}
+.glassic:hover{
+  text-shadow:0 0 3px #ffffff, 0 0 5px #0000ff;
+  cursor: pointer;
+}
+#keyboard-layout{
+    padding-top: 20px;
+    height: fit-content;
+    width: 900px;
+    margin-left: 0;
+    display: inline-block;
+}
+.right-bar-editor{
+  margin-top: 20px;
+  width: 500px;
+    display: inline-block;
+}
+
+.right-bar-buttons{
+  margin-bottom: 90px;
+}
+
+.customize-menu{
+  background-color: thistle;
+  padding: 15px;
+}
+
+.stacked-form{
+     width: min-content;
+    margin: auto;
+}
+.button{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+    width: 150px;
+    text-align: center;
+    height: 50px;
+}
+.button:hover {
+  color: black;
+  background: #fde473;
+}
+
+.danger {
+  color: white;
+  border-color: red;
+  background-color: red
+}
+
+.danger:hover {
+  color: #f44336;
+  background: white;
+}
+
+.theme-editor{
+  margin: 20px;
+}
+textarea {
+  resize: none;
+}
+
+/* This CSS codes is from  https://www.w3schools.com/howto/howto_js_dropdown.asp*/
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;   
+  width: 150px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #fde473;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* 
+* End of CSS code from  https://www.w3schools.com/howto/howto_js_dropdown.asp
+*/
+
+
+/* 
+* This CSS code is from https://www.w3schools.com/howto/howto_css_inline_form.asp
+*/
+.form-inline {
+      margin: auto;
+    display: flex;
+    width: fit-content;
+    flex-flow: row;
+    align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input , .stacked-form input{
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button, .stacked-form button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* 
+* End of CSS code from https://www.w3schools.com/howto/howto_css_inline_form.asp
+*/
+
+
+
+/*  
+*CSS code from https://www.w3schools.com/howto/howto_css_login_form.asp  
+*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 20%;
+  z-index: 1; /* Sit on top */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white;
+  padding: 30px;
+      border: grey;
+    border-style: dashed;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+ 
+  
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+select{
+  margin-bottom: 10px;
+}
+#unselect-button{
+  display: none;
+  background-color: thistle;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;   
+  width: 100px;
+}
+
+#unselect-button:hover{
+  background-color: rgb(21, 139, 134)
+}
+
+#unselect-div{
+  height: 30px;
+}
+
+.modal-content .button{
+  color: black;
+  background: white;
+  border: #fde473;
+  border-style: solid;
+}
+.error{
+  color: red;
+  display: none
+}
+.modal-content .button:hover{
+  color: black;
+  background: #fde473;
+}
+
+/* 
+*End of CSS code from https://www.w3schools.com/howto/howto_css_login_form.asp  
+*/

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="author" content="Nicki Nguyen">
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <title>Get Started - glassic docs</title>
+  <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+  <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+  <link href="../css/base.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/highlight.css">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/bootstrap-3.3.7.min.js"></script>
+  <script src="../js/highlight.pack.js"></script>
+
+  <base target="_top">
+  <script>
+    var base_url = '..';
+    var is_top_frame = false;
+
+    var pageToc = [
+      {
+        title: "Installation", url: "#_top", children: [
+        ]
+      },
+      {
+        title: "Examples", url: "#examples", children: [
+          { title: "Change keyboard's case color", url: "#change-keyboards-case-color" },
+          { title: "Default key symbols", url: "#default-key-symbols" },
+          { title: "Customize a key", url: "#customize-a-key" },
+          { title: "Apply theme", url: "#apply-theme" },
+          { title: "Apply Skin", url: "#apply-skin" },
+        ]
+      },
+    ];
+
+  </script>
+  <script src="../js/base.js"></script>
+</head>
+
+<body>
+  <script>
+    if (is_top_frame) { $('body').addClass('wm-top-page'); }
+  </script>
+
+
+
+  <div class="container-fluid wm-page-content">
+    <a name="_top"></a>
+
+
+
+
+
+
+
+    <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+
+      <div class="wm-article-nav pull-right">
+        <a href="../apis/" class="btn btn-xs btn-default pull-right">
+          Next
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+        <a href="../apis/" class="btn btn-xs btn-link">
+          API
+        </a>
+      </div>
+
+      <div class="wm-article-nav">
+        <a href=".." class="btn btn-xs btn-default pull-left">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          Previous</a><a href=".." class="btn btn-xs btn-link">
+          Document
+        </a>
+      </div>
+
+    </div>
+
+
+
+    <h2 id="installation">Installation</h2>
+    <p>Download the file glassic.js from our github repository</p>
+    <p>Include the script for glassic.js in your html page <br>
+      <code>&lt;script defer type="text/javascript" src='glassic.js'&gt;&lt;/script&gt;</code>
+    </p>
+    <h2 id="examples">Examples</h2>
+    <p>Specify a div section where you would like to generate the keyboard<br></p>
+    <p>HTML: <bk>
+    </p>
+    <pre><code>&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;script defer type=&quot;text/javascript&quot; src='glassic.js'&gt;&lt;/script&gt;
+  &lt;script defer type=&quot;text/javascript&quot; src='demo.js'&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;keyboard-layout&quot;&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+    <p>Initialize the keyboard in your js file. <br>
+      demo.js: <bk>
+    </p>
+    <pre><code>const keyBoard = new KeyBoardGenerator({
+  &quot;element&quot;: 'keyboard-layout',
+  &quot;size&quot;: &quot;65&quot;
+})
+</code></pre>
+    <p>Default keyboard will be insert to the DOM under the id <code>element</code>
+      <img alt="DefaultKeyboard" src="../img/defaultKeyboard.png" />
+    </p>
+    <h3 id="change-keyboards-case-color">Change keyboard's case color</h3>
+    <p>demo.js</p>
+    <pre><code>keyBoard.changeCaseColor('#f9c74f')
+</code></pre>
+    <p><img alt="case" src="../img/case.png" /></p>
+    <h3 id="default-key-symbols">Default key symbols</h3>
+    <p>Generate the English symbols for keys at once
+      demo.js</p>
+    <pre><code>keyBoard.generateDefaultKeyText()
+</code></pre>
+    <p><img alt="df" src="../img/df.png" /></p>
+    <h3 id="customize-a-key">Customize a key</h3>
+    <p>After the user click on a button, the <code>currentKeyDiv</code> state will be set for the KeyBoardGenerator.
+      <br>
+      Developer can get the clicked button and call methods to modify the key<br></p>
+    <p>demo.js</p>
+    <pre><code>// fist click on the top left button
+
+// manipulate the clicked button
+const clickedKey = keyBoard.getCurrentKeyDiv()
+clickedKey.changeCurrentButtonColor('#c98c84')
+clickedKey.changeCurrentButtonTextColor('#002b61')
+clickedKey.changeCurrentButtonText('ESC')
+</code></pre>
+    <p>result:<br>
+      <img alt="esc" src="../img/esc.png" />
+    </p>
+    <h3 id="apply-theme">Apply theme</h3>
+    <p>User can specify a theme layout that they would like to apply <br>
+      For theme structure and examples, please see <a href="../apis/">apis</a> <br></p>
+    <p>demo.js</p>
+    <pre><code>keyBoard.applyTheme(rainbow_theme)
+</code></pre>
+    <p>result:<br>
+      <img alt="rb" src="../img/rb.png" />
+    </p>
+    <h3 id="apply-skin">Apply Skin</h3>
+    <p>Overlay the keys with an image
+      Ideal image size: <br>
+      - 60% : 780px x 260px <br>
+      - 65% : 830px x 260px <br></p>
+    <p>demo.js</p>
+    <pre><code>const url = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-h12cgn5hua8%2FUqq7xDVR1AI%2FAAAAAAAACA4%2FMM2YBhZwy1g%2Fw1200-h630-p-k-no-nu%2FOutdoor%2BAnime%2BLandscape%2B%5BScenery%2B-%2BBackground%5D%2B99.jpg&amp;f=1&amp;nofb=1'
+
+keyBoard.applySkin(url)
+</code></pre>
+    <p>result:<br>
+      <img alt="skin" src="../img/skin.png" />
+    </p>
+
+    <br>
+
+
+
+
+
+
+
+    <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+
+      <div class="wm-article-nav pull-right">
+        <a href="../apis/" class="btn btn-xs btn-default pull-right">
+          Next
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+        <a href="../apis/" class="btn btn-xs btn-link">
+          API
+        </a>
+      </div>
+
+      <div class="wm-article-nav">
+        <a href=".." class="btn btn-xs btn-default pull-left">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          Previous</a><a href=".." class="btn btn-xs btn-link">
+          Document
+        </a>
+      </div>
+
+    </div>
+
+    <br>
+  </div>
+
+  <footer class="container-fluid wm-page-content">
+    <p>
+      <a href="https://github.com/csc309-fall-2021/js-library-nguy1916/edit/master/docs/getStarted.md"><i
+          class="fa fa-github"></i>
+        Edit on GitHub</a>
+    </p>
+    <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a
+        href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  </footer>
+
+</body>
+
+</html>

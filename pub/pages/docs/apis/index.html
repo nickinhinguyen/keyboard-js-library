@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Nicki Nguyen">
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>API - glassic docs</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "KeyBoardGenerator API v1.0.0", url: "#_top", children: [
+              {title: "options", url: "#options" },
+              {title: "Events", url: "#events" },
+              {title: "Methods", url: "#methods" },
+              {title: "Theme", url: "#theme" },
+              {title: "Theme-key field object", url: "#theme-key-field-object" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../getStarted/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../getStarted/" class="btn btn-xs btn-link">
+        Get Started
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="keyboardgenerator-api-v100">KeyBoardGenerator API v1.0.0</h1>
+<h2 id="options">options</h2>
+<p>options to initial a KeyBoardGenerator Object</p>
+<table>
+<thead>
+<tr>
+<th>Propperty</th>
+<th align="center">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td align="center">String</td>
+<td align="left">The size of the keyboard. <br>You can choose between: <ul><li>"60"</li><li>"65"</li></ul></td>
+</tr>
+<tr>
+<td>element</td>
+<td align="center">String</td>
+<td align="left">A CSS id for the keyboard element (e.g: <code>&lt;div id='keyboard-layout'/&gt;</code> where the keyboard will be inserted to the DOM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<p>When the user click on a button on the keyboard, the <code>currentKeyDiv</code> state will be set for the KeyBoardGenerator. User can get the key that was pressed with method <code>getCurrentKeyDiv()</code></p>
+<h2 id="methods">Methods</h2>
+<p>methods to control a KeyBoardGenerator Object</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th align="left">Params</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getCurrentKeyDiv</td>
+<td align="left">None</td>
+<td align="left">Return the most recent clicked on key on the keyboard (ex return div:<code>&lt;div id="key-1" style=""&gt;&lt;button id="key-1" style=""&gt;&lt;/button&gt;&lt;/div&gt;</code>)</td>
+</tr>
+<tr>
+<td>resetLayout</td>
+<td align="left">None</td>
+<td align="left">Reset the caseColor, fontFamily, textColor and render the default keyboard with the same size</td>
+</tr>
+<tr>
+<td>makeLayout60</td>
+<td align="left">None</td>
+<td align="left">Created a 60% keyboard and insert to the DOM with id: <code>KeyBoardGenerator.element</code></td>
+</tr>
+<tr>
+<td>makeLayout65</td>
+<td align="left">None</td>
+<td align="left">Created a 65% keyboard and insert to the DOM with id: <code>KeyBoardGenerator.element</code></td>
+</tr>
+<tr>
+<td>generateDefaultKeyText</td>
+<td align="left">None</td>
+<td align="left">Assign the standard English keyboard label for each key</td>
+</tr>
+<tr>
+<td>changeCaseColor</td>
+<td align="left">String: a hex color string <br>(e.g: <code>'#ffffff'</code>)</td>
+<td align="left">Change the KeyBoardGenerator object case color with given hex color string</td>
+</tr>
+<tr>
+<td>changeCurrentButtonColor</td>
+<td align="left">String: a hex color string <br>(e.g: <code>'#ffffff'</code>)</td>
+<td align="left">Change the key color of the most recent clicked key with given hex color string</td>
+</tr>
+<tr>
+<td>changeCurrentButtonText</td>
+<td align="left">String: label for the key <br>(e.g: <code>'Esc</code>)</td>
+<td align="left">Change the label symbol of the most recent clicked key with given text</td>
+</tr>
+<tr>
+<td>changeCurrentButtonTextAlign</td>
+<td align="left">String: <ul><li>"right"</li><li>"left"</li><li>"center"</li></td>
+<td align="left">Change the symbol align of the most recent clicked key with given alignment</td>
+</tr>
+<tr>
+<td>changeCurrentButtonTextSize</td>
+<td align="left">String of int: size(e.g:<code>"12"</code>)</td>
+<td align="left">Change the symbol size of the most recent clicked key with given alignment</td>
+</tr>
+<tr>
+<td>changeCurrentButtonTextColor</td>
+<td align="left">String: a hex color string <br>(e.g: <code>'#ffffff'</code>)</td>
+<td align="left">Change the symbol color of the most recent clicked key with given alignment</td>
+</tr>
+<tr>
+<td>changeCurrentButtonTextFontFamily</td>
+<td align="left">String: font family <br>(e.g: <code>"Skia"</code>)</td>
+<td align="left">Change the font family of the most recent clicked key with given alignment</td>
+</tr>
+<tr>
+<td>changeTextColorforAll</td>
+<td align="left">String: a hex color string <br>(e.g: <code>'#ffffff'</code>)</td>
+<td align="left">Change the symbol color for all keys</td>
+</tr>
+<tr>
+<td>changeButtonText</td>
+<td align="left">Object{keyId:symbol}: A JS object which contains keyId String map to symbol string <br> e.x: <code>{"key-0": 'ESC', "key-1": "1", "key-2": "A"}</code></td>
+<td align="left">Change the symbol of multiple keys given it's keyId and symbol text</td>
+</tr>
+<tr>
+<td>changeButtonTextSize</td>
+<td align="left">Object{keyId:size}: A JS object which contains keyId String map to symbol size <br> e.x: <code>{ "key-43": "11", "key-57": "11", "key-29": "11", }</code></td>
+<td align="left">Change the symbol size of multiple keys given it's keyId and symbol size</td>
+</tr>
+<tr>
+<td>exportTheme</td>
+<td align="left">None</td>
+<td align="left">Export the current layout in JSON format. Note: export theme does not include skin propperty</td>
+</tr>
+<tr>
+<td>applyTheme</td>
+<td align="left">Object: see Note for Theme</td>
+<td align="left">apply a them to the keyboard</td>
+</tr>
+<tr>
+<td>applySkin</td>
+<td align="left">String: url of a photo.<br> Optional String: button edges color. Default value: <code>#FFFFFF</code></td>
+<td align="left">Overlay a photo on the keyboard's key. Note, the skin won't be export using <code>exportTheme()</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="theme">Theme</h2>
+<p>Theme is a JSON object. <br>
+For reference, see example themes: <br>
+ - <a href="../rainbowTheme/">rainbow-theme</a> <br>
+ - <a href="../koreabooTheme/">koreaboo-theme</a> - only for 65% keyboard <br>
+Options for theme:</p>
+<table>
+<thead>
+<tr>
+<th>Propperty</th>
+<th align="center">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keyboardSize</td>
+<td align="center"><ul><li>"60"</li><li>"65"</li></ul></td>
+<td align="left">The size of the keyboard.</td>
+</tr>
+<tr>
+<td>textColor</td>
+<td align="center">String: hex color (e.x: <code>'#ffffff'</code>)</td>
+<td align="left">color for all key symbols</td>
+</tr>
+<tr>
+<td>fontFamily</td>
+<td align="center">String: font family (e.x: <code>'#Trebuchet MS</code>)</td>
+<td align="left">font family for all key symbols</td>
+</tr>
+<tr>
+<td>caseColor</td>
+<td align="center">String: hex color (e.x: <code>'#ffffff'</code>)</td>
+<td align="left">color for the keyboard case</td>
+</tr>
+<tr>
+<td>keys</td>
+<td align="center">Object: keyid maps to a Theme-key fields object</td>
+<td align="left">Specific layout for each key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="theme-key-field-object">Theme-key field object</h2>
+<p>JSON object to specify the layout for specific keys</p>
+<table>
+<thead>
+<tr>
+<th>Propperty</th>
+<th align="center">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text (Optional)</td>
+<td align="center">String: symbol for the key</td>
+<td align="left">Change symbol for the key with given text</td>
+</tr>
+<tr>
+<td>textColor (Optional)</td>
+<td align="center">string: hex color</td>
+<td align="left">Change symbol color the key with given color</td>
+</tr>
+<tr>
+<td>color (Optional)</td>
+<td align="center">string: hex color</td>
+<td align="left">Change key color  with given color</td>
+</tr>
+<tr>
+<td>fontFamily (Optional)</td>
+<td align="center">string: hex color</td>
+<td align="left">Change fontFamily of key with given fontFamily</td>
+</tr>
+<tr>
+<td>textAlign (Optional)</td>
+<td align="center"><ul><li>"right"</li><li>"left"</li><li>"center"</li></td>
+<td align="left">Change symbol align of key with given alignment</td>
+</tr>
+</tbody>
+</table>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../getStarted/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../getStarted/" class="btn btn-xs btn-link">
+        Get Started
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/csc309-fall-2021/js-library-nguy1916/edit/master/docs/apis.md"><i class="fa fa-github"></i>
+Edit on GitHub</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
